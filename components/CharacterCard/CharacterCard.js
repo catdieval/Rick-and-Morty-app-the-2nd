@@ -1,23 +1,22 @@
-export function CharacterCard(props) {
+export function CharacterCard(character) {
   const card = document.createElement("li");
-  const cardContainer = document.querySelector(`[data-js="card-container"]`);
   card.classList.add("card");
   card.innerHTML = `
   <div class="card__image-container">
-  <img class="card-image"
-    src= ${props.image}
-    alt = ${props.name} />
+  <img
+    src= ${character.image}
+    alt = ${character.name} />
   <div class="card__image-gradient"></div>
   </div>
   <div class="card__content">
-     <h2 class="card__title">${props.name}</h2>
+     <h2>${character.name}</h2>
   <dl class="card__info">
     <dt class="card__info-title">Status</dt>
-    <dd class="card__info-description">${props.status}</dd>
+    <dd class="card__info-description">${character.status}</dd>
     <dt class="card__info-title">Type</dt>
-    <dd class="card__info-description">${props.type}</dd>
+    <dd class="card__info-description">${character.type}</dd>
     <dt class="card__info-title">Occurrences</dt>
-    <dd class="card__info-description">${props.episode.lenght}</dd>
+    <dd class="card__info-description">${character.episode.length}</dd>
   </dl>
 </div>
   `;
